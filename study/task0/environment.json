@@ -6,6 +6,9 @@
   "openai_sdk": "3.29.0",
   "python_dotenv": "1.2.4",
   "mode": "offline-demo",
-  "live_api_verified": false,
-  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6"
+  "live_api_verified": true,
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "live_provider": "dashscope",
+  "live_model": "qwen-plus",
+  "live_completed_at": "2026-10-13T00:00:47.124627+08:00"
 }
