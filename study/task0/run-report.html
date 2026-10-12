@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Task0 环境与实验运行记录</title><style>body{font:16px/1.6 system-ui;margin:32px;color:#182338;background:#f4f7fc}main{max-width:1200px;margin:auto}h1{font-size:28px;margin:0}pre{background:white;border:1px solid #dbe2ee;padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 ui-monospace,monospace}.notice{color:#835500;background:#fff1cc;padding:10px}h2{font-size:18px}</style><main><h1>Task0 Agent 基础与环境准备</h1><p class="notice">官方离线演示已运行 · 示例轨迹回放 · 未调用真实 LLM 或搜索 API</p><h2>本机环境</h2><pre>{
+  &quot;recorded_at&quot;: &quot;2026-10-12T23:53:44.280087+08:00&quot;,
+  &quot;python&quot;: &quot;3.13.12&quot;,
+  &quot;platform&quot;: &quot;Darwin&quot;,
+  &quot;architecture&quot;: &quot;arm64&quot;,
+  &quot;openai_sdk&quot;: &quot;3.29.0&quot;,
+  &quot;python_dotenv&quot;: &quot;1.2.4&quot;,
+  &quot;mode&quot;: &quot;offline-demo&quot;,
+  &quot;live_api_verified&quot;: false,
+  &quot;upstream_commit&quot;: &quot;dbc046eb896ac4e39aa19c7774c8bf49583b89a6&quot;
+}</pre><h2>实验命令与原始输出</h2><pre>$ .venv/bin/python chapter1/web-search-agent/main.py --provider offline-demo --output study/task0/offline-demo.json
+
+============================================================
+🧪 离线演示模式（示例轨迹，非真实搜索结果）
+============================================================
+问题: Moonshot AI 的 Context Caching 是什么技术？
+------------------------------------------------------------
+🔍 ReAct 轨迹（想 → 做 → 看）:
+
+💭 [1] 思考: 用户想了解 Context Caching。这是 Moonshot 的特性，我需要先搜索官方说明，确认它的定义和作用。
+🔧 [1] 行动: 调用工具 web_search  参数={&quot;query&quot;: &quot;Moonshot AI Context Caching 是什么&quot;}
+👀 [1] 观察: （示例结果）Context Caching 是一种上下文缓存机制：把重复使用的前缀（如长系统提示、文档）缓存在服务端，后续请求命中缓存即可复用，从而降低重复计算与费用。
+💭 [2] 思考: 已知大致定义，但还缺少适用场景。再搜一次它的典型用途以便答得更完整。
+🔧 [2] 行动: 调用工具 web_search  参数={&quot;query&quot;: &quot;Context Caching 适用场景 计费&quot;}
+👀 [2] 观察: （示例结果）常见于多轮对话、长文档反复问答、固定系统提示等场景；命中缓存的 token 通常按更低价格计费，并能显著降低首字延迟。
+✅ [3] 最终答案: Context Caching（上下文缓存）是 Moonshot AI 提供的一种机制：将重复使用的上下文前缀缓存在服务端，后续请求复用缓存内容，从而降低重复计算、减少费用、并加快响应。它特别适合长系统提示、长文档反复问答、多轮对话等场景。（本段来自离线示例轨迹，非真实搜索结果。）
+
+📝 答案:
+------------------------------------------------------------
+Context Caching（上下文缓存）是 Moonshot AI 提供的一种机制：将重复使用的上下文前缀缓存在服务端，后续请求复用缓存内容，从而降低重复计算、减少费用、并加快响应。它特别适合长系统提示、长文档反复问答、多轮对话等场景。（本段来自离线示例轨迹，非真实搜索结果。）
+============================================================
+
+
+💾 结果已保存到: study/task0/offline-demo.json
+</pre><h2>测试命令与原始输出</h2><pre>$ .venv/bin/python -m pytest chapter1/web-search-agent/tests/test_offline_demo.py -q
+...                                                                      [100%]
+3 passed in 0.23s
+</pre></main></html>
