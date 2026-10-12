@@ -57,18 +57,19 @@ uv pip install --python .venv/bin/python --index-url https://pypi.org/simple -e 
 
 核验检查了终止回答、工具数值、答案数值以及后续请求确实携带工具观测，4 项均通过。这是第一章单任务基础实验，不等于全部消融实验，也不是实时搜索实验。`live-run.txt` 保存输出，`live-result.json` 保存无凭据的请求与响应。
 
-## 打卡材料与状态
+## 环境运行截图
 
-- 学习心得：上面的“Agent 理解与学习笔记”可复制到表单，超过 100 字。
-- 纯文本打卡稿：`check-in.txt`，已补充真实模型运行结果。
-- 环境截图：`/Users/zhangchi/Downloads/ai-agent-task0-environment-20261012.png`。
-- 实验截图：`/Users/zhangchi/Downloads/ai-agent-task0-run-20261012.png`。
-- 截图来自本机运行记录预览页，展示保存的真实命令输出；原始文本与 JSON 保留在本目录。
-- 课程：`ai-agent-book共学`；任务：`task0`。
-- 微信昵称、群号和课程评分请按本人实际情况填写；课程反馈可参考：基础公式和执行轨迹有助于理解 Agent，希望环境部分更明确区分离线示例与真实 API 实验。
-- 飞书要求先登录，同一 Task 只提交一次，修改应通过历史记录完成。
-- 本材料尚未提交飞书；真实 API 与工具执行已验证通过。
-- 真实实验截图：`/Users/zhangchi/Downloads/ai-agent-task0-live-20261013.png`。
+真实模型实验使用百炼 qwen-plus，完成模型决策、计算器执行、工具结果回传和最终回答。以下截图展示本机运行记录页中的实际输出。
+
+![真实模型与工具调用实验](images/live-run.png)
+
+离线环境与基础演示记录如下；离线示例不调用真实模型。
+
+![离线实验环境](images/offline-environment.png)
+
+![离线演示与测试结果](images/offline-run.png)
+
+[打卡心得纯文本](check-in.txt) · [真实实验原始输出](live-run.txt) · [真实请求与响应](live-result.json) · [实验脚本](run_live.py)
 
 ## 参考资料
 

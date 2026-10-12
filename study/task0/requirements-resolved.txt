@@ -1,4 +1,4 @@
--e file:///Users/zhangchi/Projects/python/ai-agent-book
+-e .
 annotated-types==0.8.0
 anyio==4.15.1
 certifi==2026.7.22
